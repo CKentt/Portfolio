@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+
+    <div>
+        <ol>
+            {% for transaction in TRANSACTIONS %}
+            <li>
+                {% for key in transaction %}
+                    {{key}}: {{transaction[key]}};
+                {% endfor %}
+            </li>
+
+            {% endfor %}
+            {{MESSAGE}}
+        </ol>
+
+    </div>
+    <div>
+        Carteira: {{CARTEIRA | usd}}
+    </div>
+
+
+{% endblock %}

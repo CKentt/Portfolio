@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <div>
+        <table>
+            <tr>
+                <th> Stock </th>
+                <th> Quantity </th>
+                <th> Price </th>
+            </tr>
+            {% for index in range(STOCKS|length) %}
+            <tr>
+                <td> {{STOCKS[index]}} </td>
+                <td> {{QUANTITIES[index]}} </td>
+                <td> {{PRICES[index]}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        Carteira: {{CARTEIRA | usd}}
+    </div>
+
+{% endblock %}
